@@ -1,0 +1,64 @@
+Elevate Labs Cybersecurity Internship – Task 4
+Setup and Use a Firewall on Windows
+
+COMMANDS AND TOOL USED -
+
+
+1. Windows Firewall Status
+Tool: Windows Security
+-Checked Windows Firewall under "Firewall & network protection" and confirmed that the firewall was turned on.
+
+2. Open Windows Firewall Advanced Settings
+Tool: Run / Windows Firewall with Advanced Security
+Command: wf.msc
+-Used to open Windows Defender Firewall with Advanced Security.
+
+3. List Existing Firewall Rules
+Tool: Windows PowerShell (Run as Administrator)
+Command: Get-NetFirewallRule | Select-Object DisplayName, Enabled, Direction, Action
+-Used to view the existing Windows Firewall rules.
+
+4. Create an Inbound Block Rule
+Tool: Windows PowerShell (Run as Administrator)
+Command: New-NetFirewallRule -DisplayName "Block Telnet Port 23 - Task 4" -Direction Inbound -Protocol TCP -LocalPort 23 -Action Block
+-Used to create a firewall rule to block inbound TCP traffic on port 23.
+
+5. Verify the Firewall Rule
+Tool: Windows PowerShell (Run as Administrator)
+Command: Get-NetFirewallRule -DisplayName "Block Telnet Port 23 - Task 4"
+-Used to confirm that the rule was enabled, set to Inbound, and configured with the Block action.
+
+6. Verify Port and Protocol
+Tool: Windows PowerShell (Run as Administrator)
+Command: Get-NetFirewallRule -DisplayName "Block Telnet Port 23 - Task 4" | Get-NetFirewallPortFilter
+-Used to confirm that the rule applies to TCP port 23.
+
+7. Find Local IPv4 Address
+Tool: Command Prompt (CMD)
+Command: ipconfig
+-Used to find the local IPv4 address of the Windows computer for testing.
+
+8. Test Port 23
+Tool: Command Prompt (CMD) using Nmap
+Command: nmap -p 23 192.168.88.5
+-Used to test TCP port 23 on the local Windows computer.
+
+Result: 23/tcp closed telnet
+-The host was reachable, but port 23 was reported as closed, indicating that no Telnet service was listening on the port.
+
+9. Remove the Temporary Firewall Rule
+Tool: Windows PowerShell (Run as Administrator)
+Command: Remove-NetFirewallRule -DisplayName "Block Telnet Port 23 - Task 4"
+-Used to remove the temporary port 23 blocking rule and restore the original firewall configuration.
+
+10. Verify Rule Removal
+Tool: Windows PowerShell (Run as Administrator)
+Command: Get-NetFirewallRule -DisplayName "Block Telnet Port 23 - Task 4"
+-Used to check whether the temporary rule still existed.
+
+11. Final Verification
+Tool: Windows PowerShell (Run as Administrator)
+Command: if (Get-NetFirewallRule -DisplayName "Block Telnet Port 23 - Task 4" -ErrorAction SilentlyContinue) { "Rule still exists" } else { "Rule removed successfully" }
+
+Result: Rule removed successfully
+-This confirmed that the temporary firewall rule was successfully removed.
