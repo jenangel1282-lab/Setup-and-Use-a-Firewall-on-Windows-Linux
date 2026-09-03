@@ -32,4 +32,7 @@ Key Concepts Learned:
 Files
 1. 'Task4.pdf' – Detailed task report
 2. 'Firewall_commands.txt' – Commands used during the task
-3. 
+3. 'Firewall_rules.png' - List of current firewall rules
+4. 'Block_rule.png' - Blocking inbound TCP traffic on port 23
+5. 'Port23_verification.png' - Verification of firewall rule applied to port 23
+6. 'Nmap_port23_test.png' - Nmap test result for port 23
