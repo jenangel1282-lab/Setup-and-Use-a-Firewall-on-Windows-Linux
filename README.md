@@ -11,23 +11,23 @@ Tools Used:
 4. Nmap – Testing TCP port 23
 
 What I Did:
-*Checked the Windows Firewall status and confirmed that it was enabled.
-*Viewed the existing Windows Firewall rules using PowerShell.
-*Created an inbound firewall rule to block TCP traffic on port 23 (Telnet).
-*Verified that the firewall rule was enabled and configured correctly.
-*Verified that the rule applied to TCP port 23.
-*Tested port 23 using Nmap.
-*Removed the temporary firewall rule after testing.
-*Verified that the test rule was successfully removed.
+* Checked the Windows Firewall status and confirmed that it was enabled.
+* Viewed the existing Windows Firewall rules using PowerShell.
+* Created an inbound firewall rule to block TCP traffic on port 23 (Telnet).
+* Verified that the firewall rule was enabled and configured correctly.
+* Verified that the rule applied to TCP port 23.
+* Tested port 23 using Nmap.
+* Removed the temporary firewall rule after testing.
+* Checked that the test rule was successfully removed.
 
 Key Concepts Learned:
-*Windows Firewall
-*Firewall rules
-*Telnet and port 23
-*PowerShell firewall management
-*Network traffic filtering
-*Basic firewall configuration
-*Testing network ports using Nmap
+* Windows Firewall
+* Firewall rules
+* Telnet and port 23
+* PowerShell firewall management
+* Network traffic filtering
+* Basic firewall configuration
+* Testing network ports using Nmap
 
 Files
 1. 'Task4.pdf' – Detailed task report
